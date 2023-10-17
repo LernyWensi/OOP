@@ -37,14 +37,14 @@ class Queue {
 
         void dequeue() {
             if (frontNode != nullptr) {
-                Node* temp = frontNode;
+                Node* temporary = frontNode;
                 frontNode = frontNode->next;
                 if (frontNode != nullptr) {
                     frontNode->prev = nullptr;
                 } else {
                     rearNode = nullptr;
                 }
-                delete temp;
+                delete temporary;
             } else {
                 std::cout << "Queue underflow! Cannot dequeue element."
                           << "\n";
@@ -69,10 +69,10 @@ class Queue {
                           << "\n";
             } else {
                 std::cout << "Queue elements: ";
-                Node* current = frontNode;
-                while (current != nullptr) {
-                    std::cout << current->data << " ";
-                    current = current->next;
+                Node* temporary = frontNode;
+                while (temporary != nullptr) {
+                    std::cout << temporary->data << " ";
+                    temporary = temporary->next;
                 }
                 std::cout << "\n";
             }

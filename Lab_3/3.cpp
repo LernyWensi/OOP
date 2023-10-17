@@ -16,25 +16,28 @@ class MyFriendDemo {
                       << ", r = " << r << "\n";
         }
 
-        friend int Sum(MyFriendDemo obj);
-        friend int Sub(MyFriendDemo obj);
+        friend int sum(MyFriendDemo obj);
+        friend int sub(MyFriendDemo obj);
 };
 
-int Sum(MyFriendDemo obj) {
-    return obj.x1_ + obj.y1_ + obj.x2_ + obj.y2_ + static_cast<int>(obj.s1_);
+int sum(MyFriendDemo object) {
+    return object.x1_ + object.y1_ + object.x2_ + object.y2_ +
+           static_cast<int>(object.s1_);
 }
 
-int Sub(MyFriendDemo obj) { return (obj.x1_ + obj.x2_) - (obj.y1_ + obj.y2_); }
+int sub(MyFriendDemo object) {
+    return (object.x1_ + object.x2_) - (object.y1_ + object.y2_);
+}
 
 int main() {
-    MyFriendDemo obj1(1, 2, 3, 4, 'F', 5.5, 6.6);
-    MyFriendDemo obj2(7, 8, 9, 10, 'B', 11.11, 12.12);
+    MyFriendDemo firstObject(1, 2, 3, 4, 'F', 5.5, 6.6);
+    MyFriendDemo secondObject(7, 8, 9, 10, 'B', 11.11, 12.12);
 
-    obj1.output();
-    obj2.output();
+    firstObject.output();
+    secondObject.output();
 
-    std::cout << "Sum: " << Sum(obj1) << std::endl;
-    std::cout << "Sub: " << Sub(obj2) << std::endl;
+    std::cout << "Sum: " << sum(firstObject) << std::endl;
+    std::cout << "Sub: " << sub(secondObject) << std::endl;
 
     return 0;
 }

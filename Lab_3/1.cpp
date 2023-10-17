@@ -31,12 +31,12 @@ class Stack {
 
         void pop() {
             if (topNode != nullptr) {
-                Node* temp = topNode;
+                Node* temporary = topNode;
                 topNode = topNode->next;
                 if (topNode != nullptr) {
                     topNode->prev = nullptr;
                 }
-                delete temp;
+                delete temporary;
             } else {
                 std::cout << "Stack underflow! Cannot pop element."
                           << "\n";

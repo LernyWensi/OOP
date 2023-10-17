@@ -1,47 +1,21 @@
+#include <algorithm>
 #include <iostream>
 
-class Base {
-    protected:
-        int baseInt;
-        char baseChar;
-
-    public:
-        Base(int baseInt, char baseChar)
-            : baseInt(baseInt), baseChar(baseChar) {}
-
-        virtual void display() {
-            std::cout << "Base class: " << baseInt << ", " << baseChar << "\n";
-        }
-};
-
-class Derived : public Base {
-    private:
-        double derivedDouble_;
-        char derivedChar_;
-
-    public:
-        Derived(int baseInt, char baseChar, double derivedDouble,
-                char derivedChar)
-            : Base(baseInt, baseChar),
-              derivedDouble_(derivedDouble),
-              derivedChar_(derivedChar) {}
-
-        void display() override {
-            std::cout << "Derived class: " << Base::baseInt << ", "
-                      << Base::baseChar << ", " << derivedDouble_ << ", "
-                      << derivedChar_ << "\n";
-        }
-};
+template <typename T>
+T findMinimum(T a, T b, T c) {
+    std::cout << "Current arguments: " << a << " " << b << " " << c << "\n";
+    return std::min({a, b, c});
+}
 
 int main() {
-    Base baseObject(10, 'Y');
-    Derived derivedObject(20, 'K', 30, 'L');
+    double doubleMinimum = findMinimum(3.14, 2.71, 1.618);
+    std::cout << "Minumum for (double): " << doubleMinimum << "\n\n";
 
-    Base* basePointer = &baseObject;
-    Derived* derivedPointer = &derivedObject;
+    int intMinumum = findMinimum(10, 5, 8);
+    std::cout << "Minumum for (int): " << intMinumum << "\n\n";
 
-    basePointer->display();
-    derivedPointer->display();
+    char charMinimum = findMinimum('c', 'b', 'a');
+    std::cout << "Minumum for (char): " << charMinimum << "\n";
 
     return 0;
 }
