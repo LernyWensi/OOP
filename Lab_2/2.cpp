@@ -3,13 +3,13 @@
 
 class FirstClass {
     public:
-        int a_, b_, c_;
+        int a, b, c;
 
         FirstClass() {}
 
         void firstInput() {
             std::cout << "Enter a, b, c respectively: ";
-            std::cin >> a_ >> b_ >> c_;
+            std::cin >> a >> b >> c;
         };
 };
 
@@ -27,17 +27,17 @@ class ThirdClass : public FirstClass, public SecondClass {
     public:
         float mean, geometricMean;
 
-        ThirdClass(float z1, float z2) : z1_(z1), z2_(z2) {}
+        ThirdClass(float z1, float z2) : z1(z1), z2(z2) {}
 
-        void calculateMean() { mean = (a_ + b_ + c_ + x + y + z1_ + z2_) / 7; }
+        void calculateMean() { mean = (a + b + c + x + y + z1 + z2) / 7; }
 
         void calculateGeometricMean() {
-            geometricMean = pow((a_ * b_ * c_ * x * y * z1_ * z2_),
+            geometricMean = pow((a * b * c * x * y * z1 * z2),
                                 (static_cast<float>(1) / 7));
         }
 
     private:
-        float z1_, z2_;
+        float z1, z2;
 };
 
 int main(int argc, char const* argv[]) {

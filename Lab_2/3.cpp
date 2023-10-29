@@ -5,7 +5,7 @@ class ThirdClass {
     public:
         float mean, geometricMean;
 
-        ThirdClass(float z1, float z2) : z1_(z1), z2_(z2) {}
+        ThirdClass(float z1, float z2) : z1(z1), z2(z2) {}
 
         class FirstClass {
             public:
@@ -31,19 +31,19 @@ class ThirdClass {
 
         void calculateMean(FirstClass& firstClass, SecondClass& secondClass) {
             mean = (firstClass.a + firstClass.b + firstClass.c + secondClass.x +
-                    secondClass.y + z1_ + z2_) /
+                    secondClass.y + z1 + z2) /
                    7;
         }
 
         void calculateGeometricMean(FirstClass& firstClass,
                                     SecondClass& secondClass) {
             geometricMean = pow((firstClass.a * firstClass.b * firstClass.c *
-                                 secondClass.x * secondClass.y * z1_ * z2_),
+                                 secondClass.x * secondClass.y * z1 * z2),
                                 (static_cast<float>(1) / 7));
         }
 
     private:
-        float z1_, z2_;
+        float z1, z2;
 };
 
 int main(int argc, char const* argv[]) {

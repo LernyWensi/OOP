@@ -16,20 +16,20 @@ class Base {
 
 class Derived : public Base {
     private:
-        double derivedDouble_;
-        char derivedChar_;
+        double derivedDouble;
+        char derivedChar;
 
     public:
         Derived(int baseInt, char baseChar, double derivedDouble,
                 char derivedChar)
             : Base(baseInt, baseChar),
-              derivedDouble_(derivedDouble),
-              derivedChar_(derivedChar) {}
+              derivedDouble(derivedDouble),
+              derivedChar(derivedChar) {}
 
         void display() {
             std::cout << "Derived class: " << Base::baseInt << ", "
-                      << Base::baseChar << ", " << derivedDouble_ << ", "
-                      << derivedChar_ << "\n";
+                      << Base::baseChar << ", " << derivedDouble << ", "
+                      << derivedChar << "\n";
         }
 };
 

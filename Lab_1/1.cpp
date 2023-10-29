@@ -13,21 +13,21 @@ class FirstClass {
 
 class SecondClass : public FirstClass {
     public:
-        double det, detX, detY, x_, y_;
+        double det, detX, detY, x, y;
 
         void calc() {
             det = a1 * b2 - a2 * b1;
             detX = c1 * b2 - c2 * b1;
             detY = a1 * c2 - a2 * c1;
-            x_ = detX / det;
-            y_ = detY / det;
+            x = detX / det;
+            y = detY / det;
         }
 
         void display() {
             std::cout << "Solution:"
                       << "\n";
-            std::cout << "x = " << x_ << "\n";
-            std::cout << "y = " << y_ << "\n";
+            std::cout << "x = " << x << "\n";
+            std::cout << "y = " << y << "\n";
             std::cout << "det = " << det << "\n";
             std::cout << "detX = " << detX << "\n";
             std::cout << "detY = " << detY << "\n";

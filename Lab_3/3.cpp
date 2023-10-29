@@ -2,17 +2,17 @@
 
 class MyFriendDemo {
     private:
-        int x1_, y1_, x2_, y2_;
-        char s1_;
+        int x1, y1, x2, y2;
+        char s1;
 
     public:
         float z, r;
         MyFriendDemo(int x1, int y1, int x2, int y2, char s1, float z, float r)
-            : x1_(x1), y1_(y1), x2_(x2), y2_(y2), s1_(s1), z(z), r(r) {}
+            : x1(x1), y1(y1), x2(x2), y2(y2), s1(s1), z(z), r(r) {}
 
         void output() {
-            std::cout << "x1 = " << x1_ << ", y1 = " << y1_ << ", x2 = " << x2_
-                      << ", y2 = " << y2_ << ", s1 = " << s1_ << ", z = " << z
+            std::cout << "x1 = " << x1 << ", y1 = " << y1 << ", x2 = " << x2
+                      << ", y2 = " << y2 << ", s1 = " << s1 << ", z = " << z
                       << ", r = " << r << "\n";
         }
 
@@ -21,12 +21,12 @@ class MyFriendDemo {
 };
 
 int sum(MyFriendDemo object) {
-    return object.x1_ + object.y1_ + object.x2_ + object.y2_ +
-           static_cast<int>(object.s1_);
+    return object.x1 + object.y1 + object.x2 + object.y2 +
+           static_cast<int>(object.s1);
 }
 
 int sub(MyFriendDemo object) {
-    return (object.x1_ + object.x2_) - (object.y1_ + object.y2_);
+    return (object.x1 + object.x2) - (object.y1 + object.y2);
 }
 
 int main() {

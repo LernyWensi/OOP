@@ -5,59 +5,59 @@
 template <typename T>
 class Array {
     private:
-        T* data_;
-        int size_;
+        T* data;
+        int size;
 
     public:
-        Array(int size) : size_(size), data_(new T[size]) {}
+        Array(int size) : size(size), data(new T[size]) {}
 
-        ~Array() { delete[] data_; }
+        ~Array() { delete[] data; }
 
         void fillArray() {
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::string input;
             std::getline(std::cin, input);
             std::istringstream stream(input);
-            for (int i = 0; i < size_; i++) {
-                stream >> data_[i];
+            for (int i = 0; i < size; i++) {
+                stream >> data[i];
             }
         }
 
         void bubbleSort() {
-            for (int i = 0; i < size_ - 1; i++) {
-                for (int j = 0; j < size_ - i - 1; j++) {
-                    if (data_[j] > data_[j + 1]) {
-                        T temporary = data_[j];
-                        data_[j] = data_[j + 1];
-                        data_[j + 1] = temporary;
+            for (int i = 0; i < size - 1; i++) {
+                for (int j = 0; j < size - i - 1; j++) {
+                    if (data[j] > data[j + 1]) {
+                        T temporary = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = temporary;
                     }
                 }
             }
         }
 
         T getMin() {
-            T min = data_[0];
-            for (int i = 1; i < size_; i++) {
-                if (data_[i] < min) {
-                    min = data_[i];
+            T min = data[0];
+            for (int i = 1; i < size; i++) {
+                if (data[i] < min) {
+                    min = data[i];
                 }
             }
             return min;
         }
 
         T getMax() {
-            T max = data_[0];
-            for (int i = 1; i < size_; i++) {
-                if (data_[i] > max) {
-                    max = data_[i];
+            T max = data[0];
+            for (int i = 1; i < size; i++) {
+                if (data[i] > max) {
+                    max = data[i];
                 }
             }
             return max;
         }
 
         void printArray() {
-            for (int i = 0; i < size_; i++) {
-                std::cout << data_[i] << " ";
+            for (int i = 0; i < size; i++) {
+                std::cout << data[i] << " ";
             }
             std::cout << "\n";
         }

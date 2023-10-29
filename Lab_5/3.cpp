@@ -8,14 +8,14 @@ class AbstractClass {
 
 class FirstClass : public AbstractClass {
     private:
-        int a_, b_, c_, d_;
+        int a, b, c, d;
 
     public:
-        FirstClass(int a, int b, int c, int d) : a_(a), b_(b), c_(c), d_(d) {}
+        FirstClass(int a, int b, int c, int d) : a(a), b(b), c(c), d(d) {}
 
         void print() override {
-            std::cout << "FirstClass fields: a = " << a_ << ", b = " << b_
-                      << ", c = " << c_ << ", d = " << d_ << std::endl;
+            std::cout << "FirstClass fields: a = " << a << ", b = " << b
+                      << ", c = " << c << ", d = " << d << std::endl;
         }
 
         ~FirstClass() {}
@@ -23,13 +23,13 @@ class FirstClass : public AbstractClass {
 
 class SecondClass : public AbstractClass {
     private:
-        double x_, y_;
+        double x, y;
 
     public:
-        SecondClass(double x, double y) : x_(x), y_(y) {}
+        SecondClass(double x, double y) : x(x), y(y) {}
 
         void print() override {
-            std::cout << "SecondClass fields: x = " << x_ << ", y = " << y_
+            std::cout << "SecondClass fields: x = " << x << ", y = " << y
                       << std::endl;
         }
 
@@ -38,13 +38,13 @@ class SecondClass : public AbstractClass {
 
 class ThirdClass : public AbstractClass {
     private:
-        double a1_, b1_;
+        double a1, b1;
 
     public:
-        ThirdClass(double a1, double b1) : a1_(a1), b1_(b1) {}
+        ThirdClass(double a1, double b1) : a1(a1), b1(b1) {}
 
         void print() override {
-            std::cout << "ThirdClass fields: a1 = " << a1_ << ", b1 = " << b1_
+            std::cout << "ThirdClass fields: a1 = " << a1 << ", b1 = " << b1
                       << std::endl;
         }
 

@@ -8,14 +8,14 @@ struct Roots {
 
 class MyClass {
     private:
-        int a_, b_, c_;
+        int a, b, c;
 
     protected:
         double x, y, z;
 
     public:
         MyClass(int a, int b, int c, double x, double y, double z)
-            : a_(a), b_(b), c_(c), x(x), y(y), z(z) {}
+            : a(a), b(b), c(c), x(x), y(y), z(z) {}
 
         friend Roots calculateRoots(const MyClass& object);
         friend double calculateSum(const MyClass& object);
@@ -24,19 +24,19 @@ class MyClass {
 Roots calculateRoots(const MyClass& object) {
     Roots roots;
 
-    double discriminant = object.b_ * object.b_ - 4 * object.a_ * object.c_;
+    double discriminant = object.b * object.b - 4 * object.a * object.c;
 
     if (discriminant < 0) {
         roots.firstRoot = 0;
         roots.secondRoot = 0;
     } else if (discriminant == 0) {
-        roots.firstRoot = -object.b_ / (2 * object.a_);
+        roots.firstRoot = -object.b / (2 * object.a);
         roots.secondRoot = roots.firstRoot;
     } else {
         roots.firstRoot =
-            (-object.b_ + std::sqrt(discriminant)) / (2 * object.a_);
+            (-object.b + std::sqrt(discriminant)) / (2 * object.a);
         roots.secondRoot =
-            (-object.b_ - std::sqrt(discriminant)) / (2 * object.a_);
+            (-object.b - std::sqrt(discriminant)) / (2 * object.a);
     }
 
     return roots;

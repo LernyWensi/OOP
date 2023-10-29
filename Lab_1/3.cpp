@@ -3,18 +3,18 @@
 
 class Teacher {
     private:
-        std::string fullName_;
-        std::string subject_;
-        int age_;
+        std::string fullName;
+        std::string subject;
+        int age;
 
     public:
         Teacher(const std::string& fio, const std::string& subject, int age)
-            : fullName_(fio), subject_(subject), age_(age) {}
+            : fullName(fio), subject(subject), age(age) {}
 
         void display() {
-            std::cout << "Full Name: " << fullName_ << "\n";
-            std::cout << "Subject: " << subject_ << "\n";
-            std::cout << "Age: " << age_ << " years"
+            std::cout << "Full Name: " << fullName << "\n";
+            std::cout << "Subject: " << subject << "\n";
+            std::cout << "Age: " << age << " years"
                       << "\n";
         }
 };
